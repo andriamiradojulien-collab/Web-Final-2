@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: examhub
+      POSTGRES_PASSWORD: examhub_password
+      POSTGRES_DB: examhub
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
